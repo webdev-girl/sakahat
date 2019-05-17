@@ -37,7 +37,8 @@
         }
         .chat li .chat-body p {
             margin: 0;
-            color: #777777;
+            /* color: #777777; */
+            color: white;
         }
         .panel-body {
             overflow-y: scroll;
