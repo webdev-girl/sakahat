@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -12,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <link href="/css/style.css" rel="stylesheet">
 </head>
-
 <style>
 body {
     margin:0;
@@ -108,38 +106,49 @@ h6{
     }
 }
 </style>
-<body style="background-color:#030404;">
+    <body style="background-color:#030404;">
+        <div class="row">
 
-    <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <div class="span2" >
-            <img src="" class="img-circle" style="border-radius: 102px;  width: 203px;">
+            <div class="profile-header-container">
+                <div class="profile-header-img">
+                    <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />
+                    <!-- badge -->
+                    <div class="rank-label-container">
+                        <span class="label label-default rank-label">{{$user->name}}</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <h1>{{ Auth::user()->name }} </h1>
-        <br/>
-        <h6>{{ Auth::user()->email }}</h6>
-        <h6></h6>
-        <div class="bottom">
-            <a class="btn btn-primary btn-twitter btn-sm" href="#">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a class="btn btn-danger btn-sm" rel="publisher"
-                href="#">
-                <i class="fa fa-google-plus"></i>
-            </a>
-            <a class="btn btn-primary btn-sm" rel="publisher"
-                href="#">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a class="btn btn-warning btn-sm" rel="publisher" href="#">
-                <i class="fa fa-behance"></i>
-            </a>
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="span2" >
+                {{-- <img src="" class="img-circle" style="border-radius: 102px;  width: 203px;"> --}}
+            </div>
+            <h1>{{ Auth::user()->name }} </h1>
+            <br/>
+            <h6>{{ Auth::user()->email }}</h6>
+            <h6></h6>
+            <div class="bottom">
+                <a class="btn btn-primary btn-twitter btn-sm" href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="btn btn-danger btn-sm" rel="publisher"
+                    href="#">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a class="btn btn-primary btn-sm" rel="publisher"
+                    href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="btn btn-warning btn-sm" rel="publisher" href="#">
+                    <i class="fa fa-behance"></i>
+                </a>
+            </div>
+
         </div>
-
-    </div>
-
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>

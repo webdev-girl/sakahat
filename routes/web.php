@@ -20,10 +20,14 @@ Route::get('/', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
-
+Route::get('/edit-profile', function () {
+    return view('edit-profile');
+});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('profile', 'UsersController@profile');
+Route::post('profile', 'UsersController@update_avatar');
 
 Route::get('/', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');

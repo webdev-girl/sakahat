@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    {{-- <link href="/css/style.css" rel="stylesheet"> --}}
+    <link href="/css/style.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
     body,html{
@@ -134,7 +134,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="/profile">Profile</a>
+                                    <a class="dropdown-item" href="/edit-profile">
+                                        User Profile
+                                    </a>
+                                    <a class="dropdown-item" href="/profile">
+                                        Profile
+                                    </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
