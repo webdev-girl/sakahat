@@ -112,6 +112,7 @@ h6{
             <div class="profile-header-container">
                 <div class="profile-header-img">
                     <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />
+                    
                     <!-- badge -->
                     <div class="rank-label-container">
                         <span class="label label-default rank-label">{{$user->name}}</span>
@@ -125,6 +126,7 @@ h6{
             <span></span>
             <span></span>
             <div class="span2" >
+
                 {{-- <img src="" class="img-circle" style="border-radius: 102px;  width: 203px;"> --}}
             </div>
             <h1>{{ Auth::user()->name }} </h1>
@@ -151,5 +153,6 @@ h6{
         </div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
     </body>
 </html>

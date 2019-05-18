@@ -60,7 +60,7 @@ if (token) {
 //
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: 'c7ddf82d3d9f7d4aa65f'
+//     key: ''
 //     // key: Laravel.pusherKey,
 //     cluster: Laravel.pusherCluster,
 //     encrypted: true
@@ -71,6 +71,6 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: 'c7ddf82d3d9f7d4aa65f',
-    cluster: 'us3',
+    key: '',
+    cluster: '',
 });

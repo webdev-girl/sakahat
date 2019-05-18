@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 @if ($message = Session::get('success'))
-
+                    
                     <div class="alert alert-success alert-block">
 
                         <button type="button" class="close" data-dismiss="alert">×</button>
@@ -31,10 +31,11 @@
 
                 <div class="profile-header-container">
                     <div class="profile-header-img">
-                        {{-- <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" /> --}}
+
+                        <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />
                         <!-- badge -->
                         <div class="rank-label-container">
-                            {{-- <span class="label label-default rank-label">{{$user->name}}</span> --}}
+                            <span class="label label-default rank-label">{{$user->name}}</span>
                         </div>
                     </div>
                 </div>

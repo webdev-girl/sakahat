@@ -12,6 +12,9 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
     <script src="https://unpkg.com/vue@2.4.2"></script>
+
+
+
     <!-- Styles -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -60,29 +63,29 @@
 
     <!-- Scripts -->
      <script>
-            const scrollDown = function (elm) {
-                elm.scrollTop = elm.scrollHeight;
-            }
+            // const scrollDown = function (elm) {
+            //     elm.scrollTop = elm.scrollHeight;
+            // }
             const btn_input = document.getElementById('btn-input');
             const btn_click = document.getElementById('btn-chat');
 
             const chat_body = document.getElementsByClassName("panel-body")[0];
 
 
-            btn_input.onkeyup = function (event) {
-                if (event.key === 'Enter') {
-                    scrollDown(chat_body);
-                }
-            }
-            btn_click.onclick = function () {
-                scrollDown(chat_body);
-            }
+            // btn_input.onkeyup = function (event) {
+            //     if (event.key === 'Enter') {
+            //         scrollDown(chat_body);
+            //     }
+            // }
+            // btn_click.onclick = function () {
+            //     scrollDown(chat_body);
+            // }
 
-            window.onload = function () {
-                setTimeout(function () {
-                    scrollDown(chat_body);
-                }, 300);
-            }
+            // window.onload = function () {
+            //     setTimeout(function () {
+            //         scrollDown(chat_body);
+            //     }, 300);
+            // }
 
         </script>
     <script>
@@ -215,6 +218,11 @@
     </div>
 
     <!-- Scripts -->
+    {{-- <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="jquery.fileupload.js"></script>
+    <script type="text/javascript" src="jquery.cloudinary.js"></script> --}}
     {{-- <script src="https://js.pusher.com/3.2/pusher.min.js"></script> --}}
     {{-- <script src="/js/app.js"></script> --}}
 </body>

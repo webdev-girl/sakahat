@@ -1,5 +1,10 @@
 <?php
 
+use Aws\S3\S3Client;
+use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use League\Flysystem\Filesystem;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 return [
 
     /*
@@ -53,8 +58,9 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
-        ],
+            ],
 
+        // Storage::disk('local')->put('file.txt', 'Contents');
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -62,7 +68,28 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+
+            'cache' => [
+                'store' => 'memcached',
+                'expire' => 600,
+                'prefix' => 'cache-prefix',
+            ],
         ],
+
+
+
+        // $client = new S3Client([
+        //     'credentials' => [
+        //         'key'    => '',
+        //         'secret' => '',
+        //     ],
+        //     'region' => '',
+        //     'version' => 'latest|version',
+        // ]);
+        //
+        // $adapter = new AwsS3Adapter($client, '', 'optional/path/prefix');
+        //
+        // $filesystem = new Filesystem($adapter);
 
     ],
 

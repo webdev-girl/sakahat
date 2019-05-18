@@ -3,6 +3,7 @@
         <li class="left clearfix" v-for="message in messages">
             <div class="chat-body clearfix">
                 <div class="header">
+                    <img src="<?php echo $grav_url; ?>" alt="" />
                     <strong class="primary-font">
                         {{ message.user.name }}
                     </strong>
