@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+<!DOCTYPE html>
 <html>
   <body>
 
@@ -17,7 +21,7 @@
       <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
       <input type="text" name="username" placeholder="Username"><br>
       <input type="text" name="full-name" placeholder="Full name"><br><br>
-    http://s3.amazonaws.com/bucketname/filename
+
       <hr>
       <h2>Save changes</h2>
 
@@ -26,7 +30,6 @@
 
 
     <script>
-
     /*
       Function to carry out the actual PUT request to S3 using the signed request from the app.
     */
@@ -46,7 +49,6 @@
       };
       xhr.send(file);
     }
-
     /*
       Function to get the temporary signed request from the app.
       If request successful, continue to upload the file using this signed
@@ -68,7 +70,6 @@
       };
       xhr.send();
     }
-
     /*
      Function called when file input updated. If there is a file selected, then
      start upload procedure by asking for a signed request from the app.
@@ -81,14 +82,13 @@
       }
       getSignedRequest(file);
     }
-
     /*
      Bind listeners when the page loads.
     */
     (() => {
         document.getElementById('file-input').onchange = initUpload;
     })();
-
     </script>
   </body>
 </html>
+@endsection

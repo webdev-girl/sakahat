@@ -27,10 +27,7 @@ return [
     | each available type of connection are provided inside this array.
     |
     */
-    // app_id = "782696"
-    // key = "c7ddf82d3d9f7d4aa65f"
-    // secret = "6e0535f32688d9dd0ca9"
-    // cluster = "us3"
+    
     'connections' => [
 
         'pusher' => [

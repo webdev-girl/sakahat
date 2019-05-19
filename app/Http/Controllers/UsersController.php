@@ -15,8 +15,7 @@ class UsersController extends Controller
     public function profile()
 {
     $user = Auth::user();
-    // $user = new User();
-    // $user = $user;
+
     return view('profile',compact('user',$user));
     }
 
