@@ -1,15 +1,17 @@
 <?php
 
 namespace App;
-
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\Models\Media;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     use Notifiable;
-
+    use HasMediaTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -44,5 +46,14 @@ class User extends Authenticatable
     public function messages()
     {
       return $this->hasMany(Message::class);
+    }
+    // public function getProfileLinkAttribute(){
+    //     return route('user.show', $this);
+    // }
+    public function registerMediaConversions(Media $media = null)
+{
+    $this->addMediaConversion('thumb')
+        ->width(50)
+        ->height(50);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use App\User;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -15,7 +15,8 @@ class UsersController extends Controller
     public function profile()
 {
     $user = Auth::user();
-
+    // $user = new User();
+    // $user = $user;
     return view('profile',compact('user',$user));
     }
 

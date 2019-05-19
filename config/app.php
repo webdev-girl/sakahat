@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-         GrahamCampbell\Flysystem\FlysystemServiceProvider
+         // GrahamCampbell\Flysystem\FlysystemServiceProvider,
         /*
          * Application Service Providers...
          */
@@ -190,7 +190,7 @@ return [
     */
 
     'aliases' => [
-
+        'Flysystem' => GrahamCampbell\Flysystem\Facades\Flysystem::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

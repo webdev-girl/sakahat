@@ -62,32 +62,31 @@
     </style>
 
     <!-- Scripts -->
-     <script>
-            // const scrollDown = function (elm) {
-            //     elm.scrollTop = elm.scrollHeight;
-            // }
+     {{-- <script>
+            const scrollDown = function (elm) {
+                elm.scrollTop = elm.scrollHeight;
+            }
             const btn_input = document.getElementById('btn-input');
             const btn_click = document.getElementById('btn-chat');
-
             const chat_body = document.getElementsByClassName("panel-body")[0];
 
 
-            // btn_input.onkeyup = function (event) {
-            //     if (event.key === 'Enter') {
-            //         scrollDown(chat_body);
-            //     }
-            // }
-            // btn_click.onclick = function () {
-            //     scrollDown(chat_body);
-            // }
+            btn_input.onkeyup = function (event) {
+                if (event.key === 'Enter') {
+                    scrollDown(chat_body);
+                }
+            }
+            btn_click.onclick = function () {
+                scrollDown(chat_body);
+            }
 
-            // window.onload = function () {
-            //     setTimeout(function () {
-            //         scrollDown(chat_body);
-            //     }, 300);
-            // }
+            window.onload = function () {
+                setTimeout(function () {
+                    scrollDown(chat_body);
+                }, 300);
+            }
 
-        </script>
+        </script> --}}
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -128,6 +127,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                     {{-- <img src="{{ Auth::user()->getMedia('avatars')->first()->getUrl('thumb') }}"> --}}
                                     {{ Auth::user()->name }} <span class="caret"></span>
 
                                 </a>
@@ -223,7 +223,7 @@
     <script type="text/javascript" src="jquery.iframe-transport.js"></script>
     <script type="text/javascript" src="jquery.fileupload.js"></script>
     <script type="text/javascript" src="jquery.cloudinary.js"></script> --}}
-    {{-- <script src="https://js.pusher.com/3.2/pusher.min.js"></script> --}}
-    {{-- <script src="/js/app.js"></script> --}}
-</body>
+    <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
+
+    </body>
 </html>
