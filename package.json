@@ -24,11 +24,11 @@
     "vue": "^2.5.17"
   },
   "dependencies": {
-    "cloudinary": "^1.14.0",
-    "laravel-echo": "^1.5.3",
     "aws-sdk": "2.x",
+    "cloudinary": "^1.14.0",
     "ejs": "2.x",
-    "express": "4.x"
+    "express": "^4.17.0",
+    "laravel-echo": "^1.5.3"
   },
   "name": "sakahat",
   "version": "1.0.0",

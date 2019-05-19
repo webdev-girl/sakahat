@@ -8,7 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.Sakac Chat', 'Sakac Chat') }}</title>
-
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <script src="./app.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
     <script src="https://unpkg.com/vue@2.4.2"></script>
