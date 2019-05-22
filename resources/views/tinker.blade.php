@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -40,4 +40,16 @@
 
         <script src="/js/app.js"></script>
     </body>
+</html> --}}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue-upload-component Test</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-upload-component"></script>
+</head>
+<body>
+
+</body>
 </html>

@@ -76,9 +76,10 @@ const app = new Vue({
         }
     }
 });
-//
+const VueUploadComponent = require('vue-upload-component')
+// Vue.component('file-upload', VueUploadComponent)
 // const VueUploadComponent = require('vue-upload-component')
-// Vue.component('file-upload', require('./components/VueUploadComponent').default);
+ Vue.component('file-upload', require('./components/VueUploadComponent').default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Chat', require('./components/Chat.vue').default);
