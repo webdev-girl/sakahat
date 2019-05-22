@@ -17,3 +17,14 @@
 Broadcast::channel('chat', function ($user) {
   return Auth::check();
 });
+Broadcast::channel('lchat', function ($user) {
+    return auth()->check();
+});
+Broadcast::channel('privatechat.{receiverid}', function ($user,$receiverid) {
+    return auth()->check();
+});
+Broadcast::channel('plchat', function ($user) {
+    if(auth()->check()){
+        return $user;
+    }
+});

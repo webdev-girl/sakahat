@@ -27,7 +27,7 @@ return [
     | each available type of connection are provided inside this array.
     |
     */
-    
+
     'connections' => [
 
         'pusher' => [
@@ -41,12 +41,15 @@ return [
                   // 'host' => '127.0.0.1',
                   // 'port' => 6001,
                   // 'scheme' => 'http'
-               'options' => [
-                    'cluster' => 'eu3',
-                    'encrypted' => true,
+               // 'options' => [
+               //      'cluster' => 'eu3',
+               //      'encrypted' => true,
 
-             ],
-        ],
+                'options' => [
+                     'cluster' => env('PUSHER_CLUSTER'),
+                     'encrypted' => true,
+         ],
+     ],
 
         'redis' => [
             'driver' => 'redis',

@@ -2,6 +2,7 @@
     @extends('layouts.app')
 
     @section('content')
+
         <div class="container">
             <div class="row">
                 @if ($message = Session::get('success'))
@@ -30,7 +31,7 @@
             <div class="row justify-content-center">
                 <h1>Edit your account</h1>
                 <div class="profile-header-container">
-                    
+
                     <div class="profile-preview-img">
                         <h2 class="your-avatar-heading">Your avatar</h2>
                         <hr>
@@ -142,4 +143,5 @@
         })();
 
         </script> --}}
+        <script src="{{ asset('js/app.js') }}" defer></script>
     @endsection

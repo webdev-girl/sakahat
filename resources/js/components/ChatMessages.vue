@@ -5,7 +5,6 @@
                 <div class="header">
                     <strong class="primary-font">
                         {{ message.user.name }}
-                        {{ message.user.avatar }}
                     </strong>
                 </div>
                 <p>

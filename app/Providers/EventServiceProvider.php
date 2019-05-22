@@ -20,8 +20,8 @@ class EventServiceProvider extends ServiceProvider
     //     ],
     // ];
     protected $listen = [
-    'App\Events\MessageSent' => [
-        'App\Listeners\SendChatMessage',
+        'App\Events\MessageSent' => [
+            'App\Listeners\SendChatMessage',
         ],
     ];
     /**

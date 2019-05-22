@@ -66,13 +66,13 @@
             }
         </style>
     </head>
-    <body>
+    <body class="bg-welcome">
 
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/chat') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

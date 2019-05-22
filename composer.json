@@ -17,10 +17,12 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "league/flysystem-cached-adapter": "^1.0",
         "lianhechx/laravel-gravatar": "^0.1.0",
-        "pusher/pusher-php-server": "~3.0",
+        "pusher/pusher-chatkit-server": "^1.1.0",
+        "pusher/pusher-php-server": "^3.4",
         "spatie/flysystem-dropbox": "^1.0",
         "spatie/laravel-medialibrary": "^7.0.0"
     },
+
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",

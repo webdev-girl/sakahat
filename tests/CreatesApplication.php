@@ -2,7 +2,12 @@
 
 namespace Tests;
 
+use Illuminate\Support\Facades\Hash;
+use BotMan\Studio\Testing\BotManTester;
+use BotMan\BotMan\Drivers\DriverManager;
 use Illuminate\Contracts\Console\Kernel;
+use BotMan\BotMan\Drivers\Tests\FakeDriver;
+use BotMan\BotMan\Drivers\Tests\ProxyDriver;
 
 trait CreatesApplication
 {
@@ -16,6 +21,14 @@ trait CreatesApplication
         $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make(Kernel::class)->bootstrap();
+
+        DriverManager::loadDriver(ProxyDriver::class);
+        $fakeDriver = new FakeDriver();
+        ProxyDriver::setInstance($fakeDriver);
+        $this->botman = $app->make('botman');
+        $this->bot = new BotManTester($this->botman, $fakeDriver, $this);
+
+        Hash::driver('bcrypt')->setRounds(4);
 
         return $app;
     }
