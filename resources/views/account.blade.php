@@ -102,19 +102,12 @@
 
     <input type="file" id="file-input">
     <p id="status">Please select a file</p>
-    <img style="border:1px solid gray;width:300px;"  id="preview" src="/images/default.png">
-
-    <h2>Your information</h2>
+    <img id="preview" src="/images/default.png">
 
     <form method="POST" action="/save-details">
-        @csrf
       <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
       <input type="text" name="username" placeholder="Username"><br>
       <input type="text" name="full-name" placeholder="Full name"><br><br>
-
-      <hr>
-      <h2>Save changes</h2>
-
       <input type="submit" value="Update profile">
     </form>
 
@@ -127,6 +120,7 @@
       const xhr = new XMLHttpRequest();
       xhr.open('PUT', signedRequest);
       xhr.onreadystatechange = () => {
+          console.log()
         if(xhr.readyState === 4){
           if(xhr.status === 200){
             document.getElementById('preview').src = url;
