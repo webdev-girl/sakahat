@@ -42,10 +42,10 @@ class UsersController extends Controller
 
     }
 ///////////////////// gravatar
-    public function profile()
-{
-    return view('profile', array('user' => Auth::user()) );
-}
+//     public function profile()
+// {
+//     return view('profile', array('user' => Auth::user()) );
+// }
 
 public function update_avatar(Request $request)
 {
