@@ -43,6 +43,10 @@ Route::get('/albums', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
+
+Route::get('/upload', function () {
+    return view('upload');
+});
 // Route::get('/save-details', function () {
 //     return view('save-details');
 // });
