@@ -8,7 +8,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Sakac Chat</title>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        {{-- <script src="http://js.pusherapp.com/1.9/pusher.min.js"></script> --}}
         <link href="/css/style.css" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>

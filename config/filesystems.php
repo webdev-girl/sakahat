@@ -57,15 +57,13 @@ return [
          'root'   => public_path().'/media',
          'url' => env('APP_URL') . '/media',
          'visibility' => 'public',
-     ],
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             ],
-
-        // Storage::disk('local')->put('file.txt', 'Contents');
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -85,24 +83,20 @@ return [
 
         // $client = new S3Client([
         //     'credentials' => [
-        //         'key'    => '',
-        //         'secret' => '',
+        //         'key'    => env('AWS_ACCESS_KEY_ID'),
+        //         'secret' => env('AWS_ACCESS_KEY_ID'),
         //     ],
-        //     'region' => '',
+        //     'region' => env('AWS_DEFAULT_REGION'),
         //     'version' => 'latest|version',
         // ]);
-        //
-        // $adapter = new AwsS3Adapter($client, '', 'optional/path/prefix');
-        //
-        // $filesystem = new Filesystem($adapter);
 
-            'default' => 'local',
-            'disks' => [
-                'local' => [
-                    'driver' => 'local',
-                    'root' => getcwd(),
-                ],
-            ],
+        // 'default' => 'local',
+        //     'disks' => [
+        //         'local' => [
+        //             'driver' => 'local',
+        //             'root' => getcwd(),
+        //         ],
+        //     ],
         ],
 
 ];

@@ -28,7 +28,6 @@ Route::get('/edit-profile', function () {
 });
 Route::get('/account', function () {
     return view('account');
-
 });
 Route::get('/bot', function () {
     return view('bot');
@@ -40,19 +39,31 @@ Route::get('/tinker', function () {
 Route::get('/albums', function () {
     return view('albums');
 });
-Route::get('/upload', function () {
-    return view('upload');
-});
+
 Route::get('/chat', function () {
     return view('chat');
 });
-Route::get('/save-details', function () {
-    return view('save-details');
+// Route::get('/save-details', function () {
+//     return view('save-details');
+// });
+Route::get('/fileUpload', function () {
+    return view('fileUpload');
 });
+Route::post('upload', function (){
+    request()->file('file')->store(
+        'my-file',
+        's3'
+    );
+})->name('upload');
+
 
 Route::get('profile', 'UsersController@profile');
 Route::post('profile', 'UsersController@update_avatar');
-
+Route::get('/artisan/storage', function() {
+    $command = 'storage:link';
+    $result = Artisan::call($command);
+    return Artisan::output();
+});
 Route::get('/', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');

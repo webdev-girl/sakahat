@@ -78,7 +78,7 @@
         </form> --}}
 
 
-        {{-- <script>
+         <script>
 
         /*
           Function to carry out the actual PUT request to S3 using the signed request from the app.
@@ -142,6 +142,5 @@
             document.getElementById('file-input').onchange = initUpload;
         })();
 
-        </script> --}}
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    @endsection
+        </script>
+@endsection

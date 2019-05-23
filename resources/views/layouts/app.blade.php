@@ -13,11 +13,9 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-upload-component"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
-    <script src="./app.js"></script>
-    <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
-    <script src="https://unpkg.com/vue@2.4.2"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -79,15 +77,16 @@
  //         scrollDown(chat_body);
  //     }
  // }
- btn_click.onclick = function () {
-     scrollDown(chat_body);
- }
- window.onload = function () {
-     setTimeout(function () {
-         scrollDown(chat_body);
-     }, 300);
- }
-</script>
+ // btn_click.onclick = function () {
+ //     scrollDown(chat_body);
+ // }
+ // window.onload = function () {
+ //     setTimeout(function () {
+ //         scrollDown(chat_body);
+ //     }, 300);
+ // }
+
+     </script>
 
 </head>
 
@@ -189,17 +188,17 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
     </div>
     <!-- Scripts -->
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.ui.widget.js"></script>
     <script type="text/javascript" src="jquery.iframe-transport.js"></script>
     <script type="text/javascript" src="jquery.fileupload.js"></script>
-    <script type="text/javascript" src="jquery.cloudinary.js"></script>
+    <script type="text/javascript" src="jquery.cloudinary.js"></script> --}}
 
     </body>
 </html>
