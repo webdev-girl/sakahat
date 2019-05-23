@@ -11,7 +11,7 @@
 
                     <form method="POST" action="{{ route('upload') }}">
                         @csrf
-                      <input type="file" name="file" class="form-control">
+                      <input type="file" name="file" class="form-control" enctype="multipart/form-data">
                       <input type="submit" class="btn btn primary">
                     </form>
                 </div>
