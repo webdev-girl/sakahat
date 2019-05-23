@@ -47,9 +47,9 @@ Route::get('/chat', function () {
 Route::get('/upload', function () {
     return view('upload');
 });
-// Route::get('/save-details', function () {
-//     return view('save-details');
-// });
+Route::get('/save-details', function () {
+    return view('save-details');
+});
 Route::get('/fileUpload', function () {
     return view('fileUpload');
 });
