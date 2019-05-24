@@ -6,7 +6,6 @@ use League\Flysystem\Filesystem;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
@@ -17,9 +16,7 @@ return [
     | based disks are available to your application. Just store away!
     |
     */
-
     'default' => env('FILESYSTEM_DRIVER', 'public'),
-
     /*
     |--------------------------------------------------------------------------
     | Default Cloud Filesystem Disk
@@ -30,9 +27,7 @@ return [
     | will be bound as the Cloud disk implementation in the container.
     |
     */
-
     'cloud' => env('FILESYSTEM_CLOUD', 's3'),
-
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -45,7 +40,6 @@ return [
     | Supported Drivers: "local", "ftp", "sftp", "s3", "rackspace"
     |
     */
-
     'disks' => [
 
         'local' => [
@@ -71,32 +65,29 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
-
-            'cache' => [
-                'store' => 'memcached',
-                'expire' => 600,
-                'prefix' => 'cache-prefix',
-            ],
+            // 'cache' => [
+            //     'store' => 'memcached',
+            //     'expire' => 600,
+            //     'prefix' => 'cache-prefix',
+            // ],
         ],
 
+        $client = new S3Client([
+            'credentials' => [
+                'key'    => env('AWS_ACCESS_KEY_ID'),
+                'secret' => env('AWS_ACCESS_KEY_ID'),
+            ],
+            'region' => env('AWS_DEFAULT_REGION'),
+            'version' => '2006-03-01',
+        ]),
 
-
-        // $client = new S3Client([
-        //     'credentials' => [
-        //         'key'    => env('AWS_ACCESS_KEY_ID'),
-        //         'secret' => env('AWS_ACCESS_KEY_ID'),
-        //     ],
-        //     'region' => env('AWS_DEFAULT_REGION'),
-        //     'version' => 'latest|version',
-        // ]);
-
-        // 'default' => 'local',
-        //     'disks' => [
-        //         'local' => [
-        //             'driver' => 'local',
-        //             'root' => getcwd(),
-        //         ],
-        //     ],
+        'default' => 'local',
+            'disks' => [
+                'local' => [
+                    'driver' => 'local',
+                    'root' => getcwd(),
+                ],
+            ],
         ],
 
 ];

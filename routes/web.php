@@ -26,16 +26,16 @@ Route::get('/profile', function () {
 Route::get('/edit-profile', function () {
     return view('edit-profile');
 });
-Route::get('/account', function () {
-    return view('account');
-});
-Route::get('/bot', function () {
-    return view('bot');
+// Route::get('/account', function () {
+//     return view('account');
+// });
+// Route::get('/bot', function () {
+//     return view('bot');
 
-});
-Route::get('/tinker', function () {
-    return view('tinker');
-});
+// });
+// Route::get('/tinker', function () {
+//     return view('tinker');
+// });
 Route::get('/albums', function () {
     return view('albums');
 });
@@ -43,7 +43,9 @@ Route::get('/albums', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
-
+// Route::get('/index', function () {
+//     return view('index');
+// });
 Route::get('/upload', function () {
     return view('upload');
 });
@@ -54,10 +56,14 @@ Route::get('/fileUpload', function () {
     return view('fileUpload');
 });
 Route::post('upload', function (){
+    // if ($request->has('imgUpload1') {
+    //     $request->file('imgUpload1')->store();
+    // }
     request()->file('file')->store(
         'my-file',
         's3'
     );
+    return back();
 })->name('upload');
 
 
@@ -72,18 +78,12 @@ Route::get('/', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 
-Route::match(['get', 'post'], '/botman', 'BotManController@handle');
-Route::get('/botman/tinker', 'BotManController@tinker');
-
+// Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+// Route::get('/botman/tinker', 'BotManController@tinker');
 Route::match(['get', 'post'],'/webhook', 'MessengerController@webhook');
-
-
 
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
-
-Auth::routes();
-
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -93,3 +93,7 @@ Route::get('messages', 'MessageController@fetchMessages');
 Route::post('messages', 'MessageController@sendMessage');
 Route::get('/private-messages/{user}', 'MessageController@privateMessages')->name('privateMessages');
 Route::post('/private-messages/{user}', 'MessageController@sendPrivateMessage')->name('privateMessages.store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

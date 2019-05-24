@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-upload-component"></script>
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
 
     <!-- Fonts -->
@@ -175,4 +175,4 @@
 
     </script>
   </body>
-</html>
+</html> --}}

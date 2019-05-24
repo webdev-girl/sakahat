@@ -64,13 +64,21 @@ if (token) {
 //     cluster: Laravel.pusherCluster,
 //     encrypted: true
 // });
-import Echo from "laravel-echo";
-
-window.Pusher = require('pusher-js');
+// import Echo from "laravel-echo";
+//
+ window.Pusher = require('pusher-js');
+//
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: env('PUSHER_APP_KEY'),
+//     cluster: env('PUSHER_APP_CLUSTER'),
+//     encrypted: true
+// });
+import Echo from "laravel-echo"
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: env('PUSHER_APP_KEY'),
+    key: 'c7ddf82d3d9f7d4aa65f',
     cluster: 'us3',
     encrypted: true
 });

@@ -2,7 +2,7 @@
     @extends('layouts.app')
 
     @section('content')
-
+{{--
         <div class="container">
             <div class="row">
                 @if ($message = Session::get('success'))
@@ -28,7 +28,7 @@
                     </div>
                 @endif
             </div>
-            <div class="row justify-content-center">
+             <div class="row justify-content-center">
                 <h1>Edit your account</h1>
                 <div class="profile-header-container">
 
@@ -39,14 +39,14 @@
 
                         {{-- <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" /> --}}
                         <!-- badge -->
-
+{{--
                         <div class="rank-label-container">
-                            {{-- <span class="label label-default rank-label">{{$user->name}}</span> --}}
-                        </div>
+                           {{-- <span class="label label-default rank-label">{{$user->name}}</span> --}}
+                        {{-- </div>
                     </div>
-                </div>
+                </div> --}}
 
-            </div>
+            {{-- </div>
             <div class="row justify-content-center">
                 <form action="/profile" method="post" enctype="multipart/form-data">
                     @csrf
@@ -57,26 +57,31 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </div>
+        </div>   --}}
 
 
-        {{-- <input type="file" id="file-input">
+         <input type="file" id="file-input">
         <p id="status">Please select a file</p>
-        <img style="border:1px solid gray;width:300px;"  id="preview" src="/images/default.png">  --}}
+        <img style="border:1px solid gray;width:300px;"  id="preview" src="/images/default.png">
 
-        {{-- <h2>Your information</h2> --}}
+         <h2>Your information</h2>
 
-          {{-- <form method="POST" action="/save-details">
-          <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png"> --}}
+         {{-- <form method="POST" action="/save-details"> --}}
+            {{-- @csrf --}}
+          {{-- <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png"> --}}
           {{-- <input type="text" name="username" placeholder="Username"><br>
-          <input type="text" name="full-name" placeholder="Full name"><br><br> --}}
+          <input type="text" name="full-name" placeholder="Full name"><br><br>  --}}
 
           {{-- <hr>
           <h2>Save changes</h2>
 
           <input type="submit" value="Update profile">
         </form> --}}
-
+        <form method="POST" action="{{ route('upload') }}">
+            @csrf
+          <input type="file" name="file" class="form-control" enctype="multipart/form-data">
+          <input type="submit" class="btn btn primary">
+        </form>
 
          <script>
 
@@ -142,5 +147,5 @@
             document.getElementById('file-input').onchange = initUpload;
         })();
 
-        </script>
+         </script>
 @endsection

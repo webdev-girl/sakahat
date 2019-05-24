@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Image;
 use App\User;
-use Illuminate\Http\File;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
@@ -19,7 +18,6 @@ class UsersController extends Controller
 {
     $user = Auth::user();
 
-    // return view('profile', array('user' => Auth::user()) );
     return view('profile',compact('user',$user));
     }
 
@@ -62,7 +60,6 @@ class UsersController extends Controller
 //         $user->save();
 //
 //     }
-    // return view('profile', array('user' => Auth::user()) );
-    // return URL::signedRoute('unsubscribe', ['user' => 1]);
-    // }
+//     return view('profile', array('user' => Auth::user()) );
+// }
 }

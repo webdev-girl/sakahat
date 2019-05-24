@@ -16,9 +16,9 @@
               <v-list-tile-title>{{friend.name}}</v-list-tile-title>
             </v-list-tile-content>
 
-             <v-list-tile-avatar>
+            <!-- <v-list-tile-avatar>
               <img :src="item.avatar">
-            </v-list-tile-avatar>
+            </v-list-tile-avatar> -->
           </v-list-tile>
 
 
@@ -240,4 +240,4 @@
   overflow-y:scroll;
   height:100vh;
 }
-</style>
+</style

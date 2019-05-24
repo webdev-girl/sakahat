@@ -8,11 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-// import Vuetify from 'vuetify'
-//
-// Vue.use(Vuetify)
-//
-// import 'vuetify/dist/vuetify.min.css'
+
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify)
+
+import 'vuetify/dist/vuetify.min.css'
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -35,7 +36,8 @@ window.Vue = require('vue');
 // const app = new Vue({
 //     el: '#app',
 // });
-
+const VueUploadComponent = require('vue-upload-component')
+Vue.component('file-upload', VueUploadComponent)
 // Vue.component('botman-tinker', require('./components/ TinkerComponent').default);
 // import {TinkerComponent} from 'botman-tinker';
 
@@ -78,8 +80,7 @@ const app = new Vue({
 });
 // const VueUploadComponent = require('vue-upload-component')
 // Vue.component('file-upload', VueUploadComponent)
-// const VueUploadComponent = require('vue-upload-component')
- // Vue.component('file-upload', require('./components/VueUploadComponent').default);
+// Vue.component('file-upload', require('./components/VueUploadComponent').default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Chat', require('./components/Chat.vue').default);
@@ -130,7 +131,7 @@ app.listen(process.env.PORT || 3000);
 
 const S3_BUCKET = process.env.S3_BUCKET;
 aws.config.region = 'ca-central-1';
-app.get('/account', (req, res) => res.render('account.blade.php'));
+app.get('/account', (req, res) => res.render('html'));
 app.get('/sign-s3', (req, res) => {
   const s3 = new aws.S3();
   const fileName = req.query['file-name'];
