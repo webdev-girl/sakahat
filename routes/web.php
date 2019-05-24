@@ -43,9 +43,9 @@ Route::get('/albums', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
-// Route::get('/index', function () {
-//     return view('index');
-// });
+Route::get('/index', function () {
+    return view('index');
+});
 Route::get('/upload', function () {
     return view('upload');
 });
