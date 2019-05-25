@@ -45,13 +45,13 @@ class User extends Authenticatable
     {
       return $this->hasMany(Message::class);
     }
-    // public function getProfileLinkAttribute(){
-    //     return route('user.show', $this);
-    // }
-//     public function registerMediaConversions(Media $media = null)
-// {
-//     $this->addMediaConversion('thumb')
-//         ->width(50)
-//         ->height(50);
-//     }
+    public function getProfileLinkAttribute(){
+        return route('user.show', $this);
+    }
+    public function registerMediaConversions(Media $media = null)
+{
+    $this->addMediaConversion('thumb')
+        ->width(50)
+        ->height(50);
+    }
 }
