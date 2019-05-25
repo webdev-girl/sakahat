@@ -97,7 +97,7 @@
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
-    var pusher = new Pusher('c7ddf82d3d9f7d4aa65f', {
+    var pusher = new Pusher('', {
       cluster: 'us3',
       forceTLS: true
     });
@@ -188,7 +188,7 @@
                                 ></chat-form>
                             </div>
                              <Chat :user="{{auth()->user()}}"></Chat>
-                             
+
                         </div>
                     </div>
                 </div>

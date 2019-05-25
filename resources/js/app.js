@@ -24,9 +24,14 @@ import 'vuetify/dist/vuetify.min.css'
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const VueUploadComponent = require('vue-upload-component')
+Vue.component('file-upload', VueUploadComponent)
+Vue.component('file-upload', require('./components/VueUploadComponent').default);
+Vue.component('Chat', require('./components/Chat.vue').default);
+Vue.component('PrivateChat', require('./components/PrivateChat.vue').default);
+Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
+Vue.component('chat-form', require('./components/ChatForm.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -36,14 +41,6 @@ import 'vuetify/dist/vuetify.min.css'
 // const app = new Vue({
 //     el: '#app',
 // });
-const VueUploadComponent = require('vue-upload-component')
-Vue.component('file-upload', VueUploadComponent)
-// Vue.component('botman-tinker', require('./components/ TinkerComponent').default);
-// import {TinkerComponent} from 'botman-tinker';
-
-Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
-Vue.component('chat-form', require('./components/ChatForm.vue').default);
-
 const app = new Vue({
     el: '#app',
 
@@ -78,13 +75,7 @@ const app = new Vue({
         }
     }
 });
-// const VueUploadComponent = require('vue-upload-component')
-// Vue.component('file-upload', VueUploadComponent)
-// Vue.component('file-upload', require('./components/VueUploadComponent').default);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('Chat', require('./components/Chat.vue').default);
-Vue.component('PrivateChat', require('./components/PrivateChat.vue').default);
 // $pusher = new Pusher\Pusher("APP_KEY", "APP_SECRET", "APP_ID", array('cluster' => 'APP_CLUSTER'));
 // $pusher->trigger('my-channel', 'my-event', array('message' => 'hello world'));
 // channel.bind('my-event', function(data) {
@@ -129,9 +120,50 @@ app.use(express.static('./public'));
 app.engine('html', require('ejs').renderFile);
 app.listen(process.env.PORT || 3000);
 
-const S3_BUCKET = process.env.S3_BUCKET;
+// const S3_BUCKET = process.env.S3_BUCKET;
 aws.config.region = 'ca-central-1';
 app.get('/account', (req, res) => res.render('html'));
+
+
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if(err){
+      console.log(err);
+      return res.end();
+    }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+    };
+    res.write(JSON.stringify(returnData));
+    res.end();
+  });
+});
+app.post('/save-details', (req, res) => {
+  // TODO: Read POSTed form data and do something useful
+});
+/*
+ * Configure the AWS region of the target bucket.
+ * Remember to change this to the relevant region.
+ */
+aws.config.region = 'ca-central-1';
+
+
+/*
+ * Load the S3 information from the environment variables.
+ */
+ // const S3_BUCKET = process.env.S3_BUCKET;
+
+/*
+ * Respond to GET requests to /account.
+ * Upon request, render the 'account.html' web page in views/ directory.
+ */
+app.get('/account', (req, res) => res.render('html'));
+
+/*
+ * Respond to GET requests to /sign-s3.
+ * Upon request, return JSON containing the temporarily-signed S3 request and
+ * the anticipated URL of the image.
+ */
 app.get('/sign-s3', (req, res) => {
   const s3 = new aws.S3();
   const fileName = req.query['file-name'];
@@ -157,6 +189,36 @@ app.get('/sign-s3', (req, res) => {
     res.end();
   });
 });
+
+/*
+ * Respond to POST requests to /submit_form.
+ * This function needs to be completed to handle the information in
+ * a way that suits your application.
+ */
 app.post('/save-details', (req, res) => {
   // TODO: Read POSTed form data and do something useful
 });
+var AWS = require('aws-sdk');
+// Set the region
+AWS.config.update({region: 'ca-central-1'});
+
+// Create S3 service object
+s3 = new AWS.S3({apiVersion: '2006-03-01'});
+
+// Call S3 to list the buckets
+s3.listBuckets(function(err, data) {
+  if (err) {
+    console.log("Error", err);
+  } else {
+    console.log("Success", data.Buckets);
+  }
+});
+// snippet-end:[s3.JavaScript.buckets.listBuckets]
+
+require('vendor/autoload.php');
+// this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
+$s3 = new Aws\S3\S3Client([
+   'version'  => '2006-03-01',
+   'region'   => 'ca-central-1',
+]);
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');

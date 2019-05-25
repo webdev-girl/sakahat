@@ -1,6 +1,6 @@
 
-dd($request->all())
-@extends('layouts.app')
+{{-- dd($request->all()) --}}
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -21,8 +21,11 @@ dd($request->all())
         </div>
     </div>
 </div>
-@endsection
-{{-- <!DOCTYPE html>
+@endsection --}}
+{{-- dd($request->all())  --}}
+ {{-- @extends('layouts.app')
+ @section('content') --}}
+ <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -75,4 +78,5 @@ dd($request->all())
         </main>
     </div>
 </body>
-</html> --}}
+</html>
+{{-- @endsection  --}}

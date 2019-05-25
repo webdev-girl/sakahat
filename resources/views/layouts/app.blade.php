@@ -7,12 +7,12 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>{{ config('app.name', 'Sakac Chat') }}</title>
 
     <!-- Scripts -->
     {{-- <script src="https://unpkg.com/vue"></script> --}}
-    <script src="https://unpkg.com/vue-upload-component"></script>
+    {{-- <script src="https://unpkg.com/vue-upload-component"></script> --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
 

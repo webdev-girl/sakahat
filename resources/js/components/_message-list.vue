@@ -45,7 +45,7 @@ props:['user','allMessages'],
 }
 </script>
 
-<style scoped>
+ <style scoped>
 .chat-card{
 margin-bottom:140px;
 }

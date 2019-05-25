@@ -17,22 +17,19 @@ Route::get('/welcome', function () {
 Route::get('/', function () {
     return view('home');
 });
-// Route::get('/private', function () {
-//     return view('private');
-// });
+Route::get('/private', function () {
+    return view('private');
+});
 Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/edit-profile', function () {
     return view('edit-profile');
 });
-// Route::get('/account', function () {
-//     return view('account');
-// });
-// Route::get('/bot', function () {
-//     return view('bot');
+Route::get('/account', function () {
+    return view('account');
+});
 
-// });
 // Route::get('/tinker', function () {
 //     return view('tinker');
 // });
@@ -56,9 +53,6 @@ Route::get('/fileUpload', function () {
     return view('fileUpload');
 });
 Route::post('upload', function (){
-    // if ($request->has('imgUpload1') {
-    //     $request->file('imgUpload1')->store();
-    // }
     request()->file('file')->store(
         'my-file',
         's3'
@@ -78,15 +72,11 @@ Route::get('/', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 
-// Route::match(['get', 'post'], '/botman', 'BotManController@handle');
-// Route::get('/botman/tinker', 'BotManController@tinker');
 Route::match(['get', 'post'],'/webhook', 'MessengerController@webhook');
 
 Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/private', 'HomeController@private')->name('private');
 Route::get('/users', 'HomeController@users')->name('users');
 Route::get('messages', 'MessageController@fetchMessages');

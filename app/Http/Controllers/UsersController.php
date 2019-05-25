@@ -40,12 +40,12 @@ class UsersController extends Controller
         ->with('success','You have successfully upload image.');
 
     }
-///////////////////// gravatar
+// ///////////////////// gravatar
 //     public function profile()
 // {
 //     return view('profile', array('user' => Auth::user()) );
 // }
-
+//
 // public function update_avatar(Request $request)
 // {
 //     if($request->hasFile('avatar')){
