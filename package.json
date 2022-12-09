@@ -34,7 +34,7 @@
     "cloudinary": "^1.14.0",
     "ejs": "2.x",
     "emoji-mart-vue": "^2.6.6",
-    "express": "^4.17.0",
+    "express": "^4.17.3",
     "handlebars-loader": "^1.7.1",
     "laravel-echo": "^1.5.3",
     "net": "^1.0.2",
