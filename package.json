@@ -35,7 +35,7 @@
     "ejs": "2.x",
     "emoji-mart-vue": "^2.6.6",
     "express": "^4.17.0",
-    "handlebars-loader": "^1.7.1",
+    "handlebars-loader": "^1.7.3",
     "laravel-echo": "^1.5.3",
     "net": "^1.0.2",
     "vue-upload-component": "^2.8.20",
